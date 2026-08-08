@@ -1,0 +1,463 @@
+<!-- Ethan Pichon -->
+<!-- Portfolio -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Ethan Pichon — Portfolio</title>
+</head>
+
+<body>
+    <div id="nav-wrapper">
+        <i id="nav-bars" class="fa fa-bars"></i>
+        <ul id="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="resume.html">Resume</a></li>
+        </ul>
+    </div>
+
+    <main id="main">
+
+        <div class="header-container">
+            <div id="profile-landscape">
+                <div class="headshot-wrapper">
+                    <img id="headshot-landscape" src="media/headshot/headshot.jpg" alt="Ethan Pichon" />
+                </div>
+                <div id="profile-info-landscape">
+                    <h1 id="name-landscape">Ethan Pichon</h1>
+                    <h2 id="headline-landscape">Mechanical &amp; Robotics Engineer  |  Caltech Undergraduate</h2>
+                    <ul id="contact-bar-landscape">
+                        <li id="location"><p><i class="fa fa-map-marker"></i> Washington, DC</p></li>
+                        <li id="email"><a href="mailto:epichon@caltech.edu"><i class="fa fa-envelope"></i> Email</a></li>
+                        <li id="linkedin"><a target="_blank" href="https://www.linkedin.com/in/ethan-pichon-93934a243/"><i class="fa fa-linkedin-square"></i> LinkedIn</a></li>
+                        <li id="github"><a target="_blank" href="https://github.com/epichon1"><i class="fa fa-github-square"></i> GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-feed">
+
+            <!-- ═══════════════ RESEARCH ═══════════════ -->
+            <div class="feed-header">
+                <h1 class="feed-title">Research</h1>
+                <p class="feed-subtitle">Academic and lab research spanning reinforcement learning and motion planning.</p>
+            </div>
+
+            <!-- ── Reinforcement Learning Benchmarking ── -->
+            <div class="project-card">
+                <p class="project-title">Reinforcement Learning Benchmarking <span class="project-date">Jun 2026 &ndash; Sep 2026</span></p>
+                <div class="project-sections-row">
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/rl_benchmarking/approach.gif" alt="Free-flyer approaching a target in simulation"/>
+                        </div>
+                        <p class="section-label">Objectives</p>
+                        <p class="section-body">As a Robert T. Herzog SURF Fellow at the Riviere Robot Lab (NYU Tandon), benchmark reinforcement-learning against sampling-based controllers on three space-manipulation tasks &mdash; debris collection, refuel insertion, and wire detangling &mdash; both in simulation and on real hardware.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="carousel-container">
+                                <img class="carousel-sizer" src="media/rl_benchmarking/wire.gif">
+                                <div class="carousel-viewport">
+                                    <img class="project-img carousel-item" src="media/rl_benchmarking/wire.gif">
+                                    <img class="project-img carousel-item" src="media/rl_benchmarking/stabilize.gif">
+                                </div>
+                                <button class="carousel-control prev" onclick="moveCarousel(this, -1)">&#10094;</button>
+                                <button class="carousel-control next" onclick="moveCarousel(this, 1)">&#10095;</button>
+                                <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span></div>
+                            </div>
+                        </div>
+                        <p class="section-label">Methods</p>
+                        <p class="section-body">Built the tasks as Gymnasium environments in MuJoCo MJX (GPU-accelerated via JAX) and trained PPO with <code>rsl_rl</code>, benchmarking it against sampling-based MPC (MPPI, CEM, and Predictive Sampling) with online domain randomization for sim-to-real robustness.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="media-card" onclick="window.open('media/rl_benchmarking/video.mp4', '_blank')">
+                                <img class="project-img" src="media/rl_benchmarking/approach.gif" alt="RL benchmarking demo"/>
+                                <div class="media-cta"><i class="fa fa-play"></i> Watch a Video</div>
+                            </div>
+                        </div>
+                        <p class="section-label">Results</p>
+                        <p class="section-body">Deployed the trained policies and controllers on hardware and analyzed their performance against a novel RL algorithm, with results prepared for submission to ICRA.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Temporal Robotics Planning ── -->
+            <div class="project-card">
+                <p class="project-title">Temporal Robotics Planning <span class="project-date">Jan 2025 &ndash; Mar 2025</span></p>
+                <div class="project-sections-row">
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/temporal_planning/demo.gif" alt="Hide-and-seek temporal planning simulation"/>
+                        </div>
+                        <p class="section-label">Objectives</p>
+                        <p class="section-body">Plan a path for a hider that must reach its goal while staying outside a moving seeker&rsquo;s sensor range &mdash; a temporal, space-time planning problem where the valid path depends on <em>when</em> the hider is at each point.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="carousel-container">
+                                <img class="carousel-sizer" src="media/temporal_planning/shot1.png">
+                                <div class="carousel-viewport">
+                                    <img class="project-img carousel-item" src="media/temporal_planning/shot1.png">
+                                    <img class="project-img carousel-item" src="media/temporal_planning/shot2.png">
+                                    <img class="project-img carousel-item" src="media/temporal_planning/shot3.png">
+                                    <img class="project-img carousel-item" src="media/temporal_planning/shot4.png">
+                                </div>
+                                <button class="carousel-control prev" onclick="moveCarousel(this, -1)">&#10094;</button>
+                                <button class="carousel-control next" onclick="moveCarousel(this, 1)">&#10095;</button>
+                                <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                            </div>
+                        </div>
+                        <p class="section-label">Methods</p>
+                        <p class="section-body">The seeker&rsquo;s patrol is planned first; the hider is then planned in a space-time configuration space, adding a node only if it stays outside the seeker&rsquo;s sensor footprint at that instant. The seeker&rsquo;s range decays exponentially the longer it is away from its charging node and resets on return, so timing matters. Implemented RRT and EST and their temporal variants in Python.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="media-card" onclick="window.open('media/temporal_planning/video.mp4', '_blank')">
+                                <img class="project-img" src="media/temporal_planning/results.gif" alt="Temporal planning demo"/>
+                                <div class="media-cta"><i class="fa fa-play"></i> Watch a Video</div>
+                            </div>
+                        </div>
+                        <p class="section-label">Results</p>
+                        <p class="section-body">Across five environments, the temporal planner threads the hider through the seeker&rsquo;s blind spots; a comparative analysis found RRT yielded a 22% higher success rate for the hider by producing more direct escape paths.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a class="report-btn" href="https://github.com/epichon1/Temporal-Robot-Planning" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
+                </div>
+            </div>
+
+            <!-- ═══════════════ PROJECTS ═══════════════ -->
+            <div class="feed-header">
+                <h1 class="feed-title">Projects</h1>
+                <p class="feed-subtitle">Hands-on robotics and mechanical builds &mdash; full hardware lifecycles, autonomy, and computer vision.</p>
+            </div>
+
+            <!-- ── Robot Multitasking via Jacobian Nullspace ── -->
+            <div class="project-card">
+                <p class="project-title">Robot Multitasking via Jacobian Nullspace <span class="project-date">Sept 2025 &ndash; Dec 2025</span></p>
+                <div class="project-sections-row">
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/jacobian_nullspace/demo.gif" alt="7-DOF arm tracking a bouncing ball"/>
+                        </div>
+                        <p class="section-label">Objectives</p>
+                        <p class="section-body">Drive a redundant 7-DOF manipulator to track fast, free-flying targets in real time while spending its extra degree of freedom on a secondary task &mdash; a live demonstration of task-priority redundancy resolution.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="carousel-container">
+                                <img class="carousel-sizer" src="media/jacobian_nullspace/shot1.png">
+                                <div class="carousel-viewport">
+                                    <img class="project-img carousel-item" src="media/jacobian_nullspace/shot1.png">
+                                    <img class="project-img carousel-item" src="media/jacobian_nullspace/shot2.png">
+                                    <img class="project-img carousel-item" src="media/jacobian_nullspace/shot3.png">
+                                    <img class="project-img carousel-item" src="media/jacobian_nullspace/shot4.png">
+                                </div>
+                                <button class="carousel-control prev" onclick="moveCarousel(this, -1)">&#10094;</button>
+                                <button class="carousel-control next" onclick="moveCarousel(this, 1)">&#10095;</button>
+                                <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                            </div>
+                        </div>
+                        <p class="section-label">Methods</p>
+                        <p class="section-body">A damped least-squares resolved-rate controller running at 100&nbsp;Hz: each tick builds the tip Jacobian, solves for the joint velocity toward the target, and projects a secondary wrist-pointing task into the Jacobian null space &mdash; q&#775; = J&#8314;(x&#775;<sub>d</sub> + &lambda;e) + (I &minus; J&#8314;J)&hairsp;J<sub>w</sub>&#8314;(&hellip;). The damping adapts to the smallest singular value so the solution stays bounded near singularities. Built as a ROS2 (Jazzy) package.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="media-card" onclick="window.open('media/jacobian_nullspace/video.mp4', '_blank')">
+                                <img class="project-img" src="media/jacobian_nullspace/demo.gif" alt="Jacobian nullspace demo"/>
+                                <div class="media-cta"><i class="fa fa-play"></i> Watch a Video</div>
+                            </div>
+                        </div>
+                        <p class="section-label">Results</p>
+                        <p class="section-body">The arm smoothly chases bouncing balls published as RViz markers &mdash; tracking one ball with its tip while continuously pointing its wrist at another, staying stable even as it stretches toward singular configurations.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a class="report-btn" href="https://github.com/epichon1/phc_final" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
+                </div>
+            </div>
+
+            <!-- ── Capstone Design Robot ── -->
+            <div class="project-card">
+                <p class="project-title">Capstone Design Robot <span class="project-date">Sept 2025 &ndash; Mar 2026</span></p>
+                <div class="project-sections-row">
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/capstone_design_robot/demo.gif" alt="Capstone robot driving the cone course"/>
+                        </div>
+                        <p class="section-label">Objectives</p>
+                        <p class="section-body">Design and build a custom autonomous robot through a full hardware lifecycle (PDR, CDR, BOM) &mdash; robust enough to scale a 37&deg; incline and to intake and expel game pieces within a tight 3-inch diameter without jamming.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="carousel-container">
+                                <img class="carousel-sizer" src="media/capstone_design_robot/shot1.jpg">
+                                <div class="carousel-viewport">
+                                    <img class="project-img carousel-item" src="media/capstone_design_robot/shot1.jpg">
+                                    <img class="project-img carousel-item" src="media/capstone_design_robot/shot2.jpg">
+                                    <img class="project-img carousel-item" src="media/capstone_design_robot/shot3.jpg">
+                                    <img class="project-img carousel-item" src="media/capstone_design_robot/shot4.jpg">
+                                </div>
+                                <button class="carousel-control prev" onclick="moveCarousel(this, -1)">&#10094;</button>
+                                <button class="carousel-control next" onclick="moveCarousel(this, 1)">&#10095;</button>
+                                <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                            </div>
+                        </div>
+                        <p class="section-label">Methods</p>
+                        <p class="section-body">Managed timeline delivery with Gantt charts; wrote a C++ motor controller using PID control on an ESP-32 / RoboClaw stack for full autonomy; and designed a custom agitation-and-funneling system for reliable intake and expulsion within a 3-inch diameter.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="media-card" onclick="window.open('media/capstone_design_robot/video.mp4', '_blank')">
+                                <img class="project-img" src="media/capstone_design_robot/result.jpg" alt="Finished capstone robot"/>
+                                <div class="media-cta"><i class="fa fa-play"></i> Watch a Video</div>
+                            </div>
+                        </div>
+                        <p class="section-label">Results</p>
+                        <p class="section-body">Machined and assembled a highly robust 40&nbsp;lb robot capable of scaling a 37&deg; incline under full autonomous control.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a class="report-btn" href="media/capstone_design_robot/report.pdf" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Read the Report</a>
+                </div>
+            </div>
+
+            <!-- ── SLAM Robot ── -->
+            <div class="project-card">
+                <p class="project-title">SLAM Robot <span class="project-date">Apr 2025 &ndash; Jun 2025</span></p>
+                <div class="project-sections-row">
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/slam_robot/demo.gif" alt="Omnidirectional robot planning through a maze"/>
+                        </div>
+                        <p class="section-label">Objectives</p>
+                        <p class="section-body">Build a complete navigation loop for <em>vertex</em>, a large four-wheel omnidirectional robot &mdash; localizing against a stored map, planning collision-free paths, and following them autonomously in the real world.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="carousel-container">
+                                <img class="carousel-sizer" src="media/slam_robot/shot1.png">
+                                <div class="carousel-viewport">
+                                    <img class="project-img carousel-item" src="media/slam_robot/shot1.png">
+                                    <img class="project-img carousel-item" src="media/slam_robot/shot2.png">
+                                    <img class="project-img carousel-item" src="media/slam_robot/shot3.png">
+                                    <img class="project-img carousel-item" src="media/slam_robot/shot4.png">
+                                </div>
+                                <button class="carousel-control prev" onclick="moveCarousel(this, -1)">&#10094;</button>
+                                <button class="carousel-control next" onclick="moveCarousel(this, 1)">&#10095;</button>
+                                <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                            </div>
+                        </div>
+                        <p class="section-label">Methods</p>
+                        <p class="section-body">An RRT planner searches in (x,&nbsp;y,&nbsp;&theta;) with a 0.125&nbsp;m step and 10% goal bias, validating each pose by stamping a rotated footprint mask over the occupancy grid; a scan-matching localizer corrects odometry against the map; and a waypoint follower converts the path into four-wheel velocity commands. Built as ROS2 (Jazzy) packages.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="media-card" onclick="window.open('media/slam_robot/video.mp4', '_blank')">
+                                <img class="project-img" src="media/slam_robot/demo.gif" alt="SLAM robot demo"/>
+                                <div class="media-cta"><i class="fa fa-play"></i> Watch a Video</div>
+                            </div>
+                        </div>
+                        <p class="section-label">Results</p>
+                        <p class="section-body">Vertex plans and drives its way through a maze in real time, threading tight corridors while keeping its footprint clear of obstacles.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a class="report-btn" href="https://github.com/epichon1/SLAM-Robot" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
+                </div>
+            </div>
+
+            <!-- ── Intelligent Line Follower ── -->
+            <div class="project-card">
+                <p class="project-title">Intelligent Line Follower <span class="project-date">Apr 2024 &ndash; Jun 2024</span></p>
+                <div class="project-sections-row">
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/line_follower/robot.jpg" alt="Line-following robot with IR sensor array"/>
+                        </div>
+                        <p class="section-label">Objectives</p>
+                        <p class="section-body">Construct a line-following robot that responds to environmental feedback and lets the user change its goal on the fly.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="carousel-container">
+                                <img class="carousel-sizer" src="media/line_follower/algo1.jpg">
+                                <div class="carousel-viewport">
+                                    <img class="project-img carousel-item" src="media/line_follower/algo1.jpg">
+                                    <img class="project-img carousel-item" src="media/line_follower/algo2.jpg">
+                                    <img class="project-img carousel-item" src="media/line_follower/algo3.jpg">
+                                </div>
+                                <button class="carousel-control prev" onclick="moveCarousel(this, -1)">&#10094;</button>
+                                <button class="carousel-control next" onclick="moveCarousel(this, 1)">&#10095;</button>
+                                <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                            </div>
+                        </div>
+                        <p class="section-label">Methods</p>
+                        <p class="section-body">Driven by an A* algorithm and integrating IR and ultrasound sensors for environmental feedback, with a multithreaded architecture and a concise UI &mdash; designed from the state-machine and behavior flowcharts shown here.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="media-card" onclick="window.open('media/line_follower/video.mp4', '_blank')">
+                                <img class="project-img" src="media/line_follower/demo.gif" alt="Line follower driving"/>
+                                <div class="media-cta"><i class="fa fa-play"></i> Watch a Video</div>
+                            </div>
+                        </div>
+                        <p class="section-label">Results</p>
+                        <p class="section-body">The robot tracks and follows its path in real time, and users can dynamically change its objective on the fly.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a class="report-btn" href="media/line_follower/video.mp4" target="_blank" rel="noopener"><i class="fa fa-play"></i> Watch the Demo</a>
+                </div>
+            </div>
+
+            <!-- ── Motorized Tracking Camera ── -->
+            <div class="project-card">
+                <p class="project-title">Motorized Tracking Camera <span class="project-date">Sept 2024 &ndash; Dec 2024</span></p>
+                <div class="project-sections-row">
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/tracking_camera/cover.jpg" alt="Motorized tracking camera hardware"/>
+                        </div>
+                        <p class="section-label">Objectives</p>
+                        <p class="section-body">Engineer a motorized tracking-camera system with a fully custom housing that follows a moving target in real time.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="carousel-container">
+                                <img class="carousel-sizer" src="media/tracking_camera/cad.jpg">
+                                <div class="carousel-viewport">
+                                    <img class="project-img carousel-item" src="media/tracking_camera/cad.jpg">
+                                    <img class="project-img carousel-item" src="media/tracking_camera/drawing.jpg">
+                                    <img class="project-img carousel-item" src="media/tracking_camera/mask.jpg">
+                                </div>
+                                <button class="carousel-control prev" onclick="moveCarousel(this, -1)">&#10094;</button>
+                                <button class="carousel-control next" onclick="moveCarousel(this, 1)">&#10095;</button>
+                                <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                            </div>
+                        </div>
+                        <p class="section-label">Methods</p>
+                        <p class="section-body">Fully CADed and assembled the custom housing and motor mounts, and optimized visual tracking with HSV constriction, erode-dilate filtering, and shape recognition.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/tracking_camera/track.jpg" alt="Real-time tracking of a ball with crosshair overlay"/>
+                        </div>
+                        <p class="section-label">Results</p>
+                        <p class="section-body">Robust, low-noise real-time visual tracking that keeps a target centered as it moves.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a class="report-btn" href="media/tracking_camera/report.pdf" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Read the Report</a>
+                </div>
+            </div>
+
+            <!-- ── Planetary Transmission ── -->
+            <div class="project-card">
+                <p class="project-title">Planetary Transmission <span class="project-date">Apr 2025 &ndash; Jun 2025</span></p>
+                <div class="project-sections-row">
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/planetary_transmission/cover.jpg" alt="Planetary transmission CAD model"/>
+                        </div>
+                        <p class="section-label">Objectives</p>
+                        <p class="section-body">Design, document, and machine a fully functional planetary transmission system from the ground up.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <div class="carousel-container">
+                                <img class="carousel-sizer" src="media/planetary_transmission/plot1.jpg">
+                                <div class="carousel-viewport">
+                                    <img class="project-img carousel-item" src="media/planetary_transmission/plot1.jpg">
+                                    <img class="project-img carousel-item" src="media/planetary_transmission/plot2.jpg">
+                                </div>
+                                <button class="carousel-control prev" onclick="moveCarousel(this, -1)">&#10094;</button>
+                                <button class="carousel-control next" onclick="moveCarousel(this, 1)">&#10095;</button>
+                                <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span></div>
+                            </div>
+                        </div>
+                        <p class="section-label">Methods</p>
+                        <p class="section-body">Delivered comprehensive PDR and CDR documentation including a full BOM, CAD models, and structural research analysis, with RPM- and power-versus-time testing to characterize performance.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-section">
+                        <div class="section-media">
+                            <img class="project-img" src="media/planetary_transmission/build.jpg" alt="Assembled planetary transmission"/>
+                        </div>
+                        <p class="section-label">Results</p>
+                        <p class="section-body">Precision-machined and successfully assembled a fully functional planetary transmission system.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a class="report-btn" href="media/planetary_transmission/report.pdf" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Read the Report</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <h4>&copy; <span id="year"></span> Ethan Pichon. All Rights Reserved.</h4>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

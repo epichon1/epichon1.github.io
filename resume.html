@@ -1,0 +1,47 @@
+<!-- Ethan Pichon -->
+<!-- Resume -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Ethan Pichon — Resume</title>
+</head>
+
+<body>
+    <div id="nav-wrapper">
+        <i id="nav-bars" class="fa fa-bars"></i>
+        <ul id="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
+        </ul>
+    </div>
+
+    <main id="main">
+        <div class="content" style="margin: 0 auto;">
+            <h1 style="text-align:center; margin-bottom:0.6em;">Resume</h1>
+            <div class="resume-actions">
+                <a class="report-btn" href="Ethan_Pichon_CV.pdf" download><i class="fa fa-download"></i> Download PDF</a>
+                <button class="report-btn" id="fullscreen-btn" type="button"><i class="fa fa-expand"></i> Full Screen</button>
+            </div>
+            <div class="pdf-container" id="resume-container">
+                <button class="resume-fs-overlay" onclick="document.getElementById('fullscreen-btn').click()"><i class="fa fa-expand"></i></button>
+                <iframe src="Ethan_Pichon_CV.pdf#toolbar=0&navpanes=0" title="Ethan Pichon Resume" style="width:100%; height:100%; border:none; border-radius: var(--radius-lg);"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h4>&copy; <span id="year"></span> Ethan Pichon. All Rights Reserved.</h4>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
